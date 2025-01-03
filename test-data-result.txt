@@ -1,0 +1,421 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/User",
+    "definitions": {
+        "User": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "can_view_more_preview_comments": {
+                    "type": "boolean"
+                },
+                "caption": {
+                    "$ref": "#/definitions/Caption"
+                },
+                "caption_is_edited": {
+                    "type": "boolean"
+                },
+                "comment_count": {
+                    "type": "integer"
+                },
+                "comment_likes_enabled": {
+                    "type": "boolean"
+                },
+                "comments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Comment"
+                    }
+                },
+                "has_more_comments": {
+                    "type": "boolean"
+                },
+                "has_more_headload_comments": {
+                    "type": "boolean"
+                },
+                "is_ranked": {
+                    "type": "boolean"
+                },
+                "liked_by_media_owner_badge_enabled": {
+                    "type": "boolean"
+                },
+                "sort_order": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "pagination_token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "can_view_more_preview_comments",
+                "caption",
+                "caption_is_edited",
+                "comment_count",
+                "comment_likes_enabled",
+                "comments",
+                "has_more_comments",
+                "has_more_headload_comments",
+                "is_ranked",
+                "liked_by_media_owner_badge_enabled",
+                "pagination_token",
+                "sort_order",
+                "status"
+            ],
+            "title": "User"
+        },
+        "Caption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "pk": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "did_report_as_spam": {
+                    "type": "boolean"
+                },
+                "created_at": {
+                    "type": "integer"
+                },
+                "created_at_utc": {
+                    "type": "integer"
+                },
+                "created_at_for_fb_app": {
+                    "type": "integer"
+                },
+                "content_type": {
+                    "$ref": "#/definitions/ContentType"
+                },
+                "status": {
+                    "$ref": "#/definitions/Status"
+                },
+                "bit_flags": {
+                    "type": "integer"
+                },
+                "share_enabled": {
+                    "type": "boolean"
+                },
+                "is_ranked_comment": {
+                    "type": "boolean"
+                },
+                "media_id": {
+                    "type": "string"
+                },
+                "is_created_by_media_owner": {
+                    "type": "boolean"
+                },
+                "private_reply_status": {
+                    "type": "integer"
+                },
+                "user": {
+                    "$ref": "#/definitions/CaptionUser"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "is_covered": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "bit_flags",
+                "content_type",
+                "created_at",
+                "created_at_for_fb_app",
+                "created_at_utc",
+                "did_report_as_spam",
+                "is_covered",
+                "is_created_by_media_owner",
+                "is_ranked_comment",
+                "media_id",
+                "pk",
+                "private_reply_status",
+                "share_enabled",
+                "status",
+                "text",
+                "type",
+                "user",
+                "user_id"
+            ],
+            "title": "Caption"
+        },
+        "CaptionUser": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "pk": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "pk_id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "full_name": {
+                    "type": "string"
+                },
+                "is_private": {
+                    "type": "boolean"
+                },
+                "strong_id__": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "fbid_v2": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                },
+                "is_verified": {
+                    "type": "boolean"
+                },
+                "profile_pic_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".jpg"
+                    ]
+                }
+            },
+            "required": [
+                "fbid_v2",
+                "full_name",
+                "id",
+                "is_private",
+                "is_verified",
+                "pk",
+                "pk_id",
+                "profile_pic_url",
+                "strong_id__",
+                "username"
+            ],
+            "title": "CaptionUser"
+        },
+        "Comment": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "pk": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "did_report_as_spam": {
+                    "type": "boolean"
+                },
+                "created_at": {
+                    "type": "integer"
+                },
+                "created_at_utc": {
+                    "type": "integer"
+                },
+                "created_at_for_fb_app": {
+                    "type": "integer"
+                },
+                "content_type": {
+                    "$ref": "#/definitions/ContentType"
+                },
+                "status": {
+                    "$ref": "#/definitions/Status"
+                },
+                "bit_flags": {
+                    "type": "integer"
+                },
+                "share_enabled": {
+                    "type": "boolean"
+                },
+                "is_ranked_comment": {
+                    "type": "boolean"
+                },
+                "media_id": {
+                    "type": "string"
+                },
+                "comment_index": {
+                    "type": "integer"
+                },
+                "inline_composer_display_condition": {
+                    "$ref": "#/definitions/InlineComposerDisplayCondition"
+                },
+                "has_liked_comment": {
+                    "type": "boolean"
+                },
+                "comment_like_count": {
+                    "type": "integer"
+                },
+                "private_reply_status": {
+                    "type": "integer"
+                },
+                "preview_child_comments": {
+                    "type": "array",
+                    "items": {}
+                },
+                "child_comment_count": {
+                    "type": "integer"
+                },
+                "num_head_child_comments": {
+                    "type": "integer"
+                },
+                "has_more_head_child_comments": {
+                    "type": "boolean"
+                },
+                "has_more_tail_child_comments": {
+                    "type": "boolean"
+                },
+                "other_preview_users": {
+                    "type": "array",
+                    "items": {}
+                },
+                "user": {
+                    "$ref": "#/definitions/CommentUser"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "is_covered": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "bit_flags",
+                "child_comment_count",
+                "comment_index",
+                "comment_like_count",
+                "content_type",
+                "created_at",
+                "created_at_for_fb_app",
+                "created_at_utc",
+                "did_report_as_spam",
+                "has_liked_comment",
+                "inline_composer_display_condition",
+                "is_covered",
+                "is_ranked_comment",
+                "media_id",
+                "other_preview_users",
+                "pk",
+                "preview_child_comments",
+                "private_reply_status",
+                "share_enabled",
+                "status",
+                "text",
+                "type",
+                "user",
+                "user_id"
+            ],
+            "title": "Comment"
+        },
+        "CommentUser": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "pk": {
+                    "type": "string"
+                },
+                "pk_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "full_name": {
+                    "type": "string"
+                },
+                "is_private": {
+                    "type": "boolean"
+                },
+                "strong_id__": {
+                    "type": "string"
+                },
+                "fbid_v2": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                },
+                "is_verified": {
+                    "type": "boolean"
+                },
+                "profile_pic_id": {
+                    "type": "string"
+                },
+                "profile_pic_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".jpg"
+                    ]
+                },
+                "is_mentionable": {
+                    "type": "boolean"
+                },
+                "latest_reel_media": {
+                    "type": "integer"
+                },
+                "latest_besties_reel_media": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "fbid_v2",
+                "full_name",
+                "id",
+                "is_mentionable",
+                "is_private",
+                "is_verified",
+                "latest_besties_reel_media",
+                "latest_reel_media",
+                "pk",
+                "pk_id",
+                "profile_pic_id",
+                "profile_pic_url",
+                "strong_id__",
+                "username"
+            ],
+            "title": "CommentUser"
+        },
+        "ContentType": {
+            "type": "string",
+            "enum": [
+                "comment"
+            ],
+            "title": "ContentType"
+        },
+        "Status": {
+            "type": "string",
+            "enum": [
+                "Active"
+            ],
+            "title": "Status"
+        },
+        "InlineComposerDisplayCondition": {
+            "type": "string",
+            "enum": [
+                "never"
+            ],
+            "title": "InlineComposerDisplayCondition"
+        }
+    }
+}
