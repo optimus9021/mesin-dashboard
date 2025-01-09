@@ -121,10 +121,10 @@
 
         // Load data for each table on page load
         window.onload = async function() {
-            await loadData('/api/data/followers', 'followers-table');
-            await loadData('/api/data/activities', 'activities-table', ['activities']);
-            await loadData('/api/data/interaction', 'interaction-table', ['interaction']);
-            await loadData('/api/data/responsiveness', 'responsiveness-table', ['responsiveness']);
+            await loadData('/api/data/followersIg', 'followers-table');
+            await loadData('/api/data/activitiesIg', 'activities-table', ['activities']);
+            await loadData('/api/data/interactionIg', 'interaction-table', ['interaction']);
+            await loadData('/api/data/responsivenessIg', 'responsiveness-table', ['responsiveness']);
         };
 
         // Function to export table to Excel

@@ -37,6 +37,7 @@
     <button onclick="executeGetData()">Eksekusi getData</button>
     <button onclick="executeGetPost()">Eksekusi getPost</button>
     <button onclick="executeGetComment()">Eksekusi getComment</button>
+    <button onclick="executeGetChildComment()">Eksekusi getChildComment</button>
 
     <div id="result"></div>
 
@@ -58,6 +59,12 @@
 
         async function executeGetComment() {
             const response = await fetch('/api/execute/getComment');
+            const result = await response.text();
+            document.getElementById('result').innerText = result;
+        }
+
+        async function executeGetChildComment() {
+            const response = await fetch('/api/execute/getChildComment');
             const result = await response.text();
             document.getElementById('result').innerText = result;
         }
